@@ -7,6 +7,7 @@ import { CarwashCard } from "../components/molecules/CarwashCard";
 
 const HomePage = () => {
   const [recentList, setRecentList] = useState([]); // Initializing state
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     // Simulating fetching from your mock API endpoint
@@ -48,6 +49,22 @@ const HomePage = () => {
           <RecentCarwashSlider recentList={recentList} />
         </section>
       </main>
+
+      <div>
+        <div>버튼을 눌러 데이터를 불러오세요</div>
+        <button
+          className="p-4 border"
+          onClick={() => {
+            fetch("/api/carwashes")
+              .then((res) => JSON.stringify(res))
+              .then((data) => {
+                setMessage(data);
+              });
+          }}>
+          Click me!
+        </button>
+        <div>{message}</div>
+      </div>
     </>
   );
 };
