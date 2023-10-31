@@ -1,5 +1,5 @@
 import { useSuspenseQueries, useSuspenseQuery } from "@tanstack/react-query";
-import Checkbox from "../atoms/CheckBox";
+import Checkbox from "../atoms/Checkbox";
 import Card from "../molecules/Card";
 import MonthSelectorCard from "../organisms/MonthSelectorCard";
 import SalesItem from "../organisms/SalesItem";
